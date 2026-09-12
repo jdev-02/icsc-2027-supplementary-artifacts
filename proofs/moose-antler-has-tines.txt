@@ -1,0 +1,221 @@
+# Moose antler has Tines
+# Table I row: Moose antler has Tines
+# Pattern: Cross-file existential
+# Time: 1.776s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+moose tine: Time: 1776ms / 30000ms limit
+Raw Prover Output (239 lines)
+Answers
+1. sK33(Antler1)
+1 answer shown.
+1.	(forall (?X0 ?X1)
+    (=>
+        (and
+            (instance ?X1 Moose)
+            (instance ?X0 Horn)
+            (part ?X0 ?X1))
+        (exists (?X2)
+            (and
+                (instance ?X2 Tine)
+                (component ?X2 ?X0)))))		[FORALL][VARS]A corpuscular object X an object Y[/VARS] [IF_A][AND][SEG] object Y is an instance of moose[/SEG] [SEG] corpuscular object X is an instance of horn[/SEG] [SEG] corpuscular object X is a part of object Y[/SEG][/AND][/IF_A][IF_C] corpuscular object Z [AND][SEG] corpuscular object Z is an instance of tine[/SEG] [SEG] corpuscular object Z is a component of corpuscular object X[/SEG][/AND][/IF_C][/FORALL]
+2.	(instance Moose1 Moose)		Moose1 is an instance of moose
+3.	(instance Antler1 Horn)		Antler1 is an instance of horn
+4.	(exists (?X0)
+    (and
+        (instance ?X0 Tine)
+        (component ?X0 Antler1)))		A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Antler1[/SEG][/AND]
+5.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Antler1))))	4 [negated_conjecture]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Antler1[/SEG][/AND]
+6.	(part Antler1 Moose1)		Antler1 is a part of Moose1
+7.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Antler1)
+            (ans0 ?X0))))	5 [answer_literal_injection]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Antler1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/AND]
+8.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Antler1)
+            (ans0 ?X0))))	7 [flattening]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Antler1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/AND]
+9.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Tine))
+        (not
+            (component ?X0 Antler1))
+        (not
+            (ans0 ?X0))))	8 [ennf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Antler1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/OR][/FORALL]
+10.	(forall (?X0 ?X1)
+    (or
+        (exists (?X2)
+            (and
+                (instance ?X2 Tine)
+                (component ?X2 ?X0)))
+        (not
+            (instance ?X1 Moose))
+        (not
+            (instance ?X0 Horn))
+        (not
+            (part ?X0 ?X1))))	1 [ennf_transformation]	[FORALL][VARS]A corpuscular object X an object Y[/VARS] [OR][SEG] corpuscular object Z [AND][SEG] corpuscular object Z is an instance of tine[/SEG] [SEG] corpuscular object Z is a component of corpuscular object X[/SEG][/AND][/SEG] [SEG] object Y is an instance of moose[/SEG] [SEG] corpuscular object X is an instance of horn[/SEG] [SEG] corpuscular object X is a part of object Y[/SEG][/OR][/FORALL]
+11.	(forall (?X0 ?X1)
+    (or
+        (exists (?X2)
+            (and
+                (instance ?X2 Tine)
+                (component ?X2 ?X0)))
+        (not
+            (instance ?X1 Moose))
+        (not
+            (instance ?X0 Horn))
+        (not
+            (part ?X0 ?X1))))	10 [flattening]	[FORALL][VARS]A corpuscular object X an object Y[/VARS] [OR][SEG] corpuscular object Z [AND][SEG] corpuscular object Z is an instance of tine[/SEG] [SEG] corpuscular object Z is a component of corpuscular object X[/SEG][/AND][/SEG] [SEG] object Y is an instance of moose[/SEG] [SEG] corpuscular object X is an instance of horn[/SEG] [SEG] corpuscular object X is a part of object Y[/SEG][/OR][/FORALL]
+12.	(forall (?X0)
+    (=>
+        (exists (?X2)
+            (and
+                (instance ?X2 Tine)
+                (component ?X2 ?X0)))
+        (and
+            (instance
+                (sK33 ?X0) Tine)
+            (component
+                (sK33 ?X0) ?X0))))	[definition]	[FORALL][VARS]A corpuscular object X[/VARS] [IF_A] corpuscular object Y [AND][SEG] corpuscular object Y is an instance of tine[/SEG] [SEG] corpuscular object Y is a component of corpuscular object X[/SEG][/AND][/IF_A][IF_C][AND][SEG]sK33 corpuscular object X is an instance of tine[/SEG] [SEG]sK33 corpuscular object X is a component of corpuscular object X[/SEG][/AND][/IF_C][/FORALL]
+13.	(forall (?X0 ?X1)
+    (or
+        (and
+            (instance
+                (sK33 ?X0) Tine)
+            (component
+                (sK33 ?X0) ?X0))
+        (not
+            (instance ?X1 Moose))
+        (not
+            (instance ?X0 Horn))
+        (not
+            (part ?X0 ?X1))))	11 12 [skolemisation]	[FORALL][VARS]A corpuscular object X an object Y[/VARS] [OR][SEG][AND][SEG]sK33 corpuscular object X is an instance of tine[/SEG] [SEG]sK33 corpuscular object X is a component of corpuscular object X[/SEG][/AND][/SEG] [SEG] object Y is an instance of moose[/SEG] [SEG] corpuscular object X is an instance of horn[/SEG] [SEG] corpuscular object X is a part of object Y[/SEG][/OR][/FORALL]
+14.	(forall (?X0)
+    (or
+        (not
+            (component ?X0 Antler1))
+        (not
+            (instance ?X0 Tine))
+        (not
+            (ans0 ?X0))))	9 [cnf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG] corpuscular object X is a component of Antler1[/SEG] [SEG] corpuscular object X is an instance of tine[/SEG] [SEG]ans0 corpuscular object X[/SEG][/OR][/FORALL]
+15.	(forall (?X0 ?X1)
+    (or
+        (component
+            (sK33 ?X0) ?X0)
+        (not
+            (instance ?X1 Moose))
+        (not
+            (instance ?X0 Horn))
+        (not
+            (part ?X0 ?X1))))	13 [cnf_transformation]	[FORALL][VARS]A corpuscular object X an object Y[/VARS] [OR][SEG]sK33 corpuscular object X is a component of corpuscular object X[/SEG] [SEG] object Y is an instance of moose[/SEG] [SEG] corpuscular object X is an instance of horn[/SEG] [SEG] corpuscular object X is a part of object Y[/SEG][/OR][/FORALL]
+16.	(forall (?X0 ?X1)
+    (or
+        (instance
+            (sK33 ?X0) Tine)
+        (not
+            (instance ?X1 Moose))
+        (not
+            (instance ?X0 Horn))
+        (not
+            (part ?X0 ?X1))))	13 [cnf_transformation]	[FORALL][VARS]An object X object Y[/VARS] [OR][SEG]sK33 object X is an instance of tine[/SEG] [SEG] object Y is an instance of moose[/SEG] [SEG] object X is an instance of horn[/SEG] [SEG] object X is a part of object Y[/SEG][/OR][/FORALL]
+17.	(part Antler1 Moose1)	6 [cnf_transformation]	Antler1 is a part of Moose1
+18.	(instance Antler1 Horn)	3 [cnf_transformation]	Antler1 is an instance of horn
+19.	(instance Moose1 Moose)	2 [cnf_transformation]	Moose1 is an instance of moose
+20.	(forall (?X0)
+    (or
+        (not
+            (instance
+                (sK33 Antler1) Tine))
+        (not
+            (ans0
+                (sK33 Antler1)))
+        (not
+            (instance ?X0 Moose))
+        (not
+            (instance Antler1 Horn))
+        (not
+            (part Antler1 ?X0))))	14 15 [resolution]	[FORALL][VARS]An object X[/VARS] [OR][SEG]sK33 Antler1 is an instance of tine[/SEG] [SEG]ans0 sK33 Antler1[/SEG] [SEG] object X is an instance of moose[/SEG] [SEG]Antler1 is an instance of horn[/SEG] [SEG]Antler1 is a part of object X[/SEG][/OR][/FORALL]
+21.	(forall (?X0)
+    (or
+        (not
+            (instance
+                (sK33 Antler1) Tine))
+        (not
+            (ans0
+                (sK33 Antler1)))
+        (not
+            (instance ?X0 Moose))
+        (not
+            (part Antler1 ?X0))))	20 18 [forward_subsumption_resolution]	[FORALL][VARS]An object X[/VARS] [OR][SEG]sK33 Antler1 is an instance of tine[/SEG] [SEG]ans0 sK33 Antler1[/SEG] [SEG] object X is an instance of moose[/SEG] [SEG]Antler1 is a part of object X[/SEG][/OR][/FORALL]
+22.	(<=> spl873_7
+    (forall (?X0)
+        (or
+            (not
+                (instance ?X0 Moose))
+            (not
+                (part Antler1 ?X0)))))	[definition]	spl873_7 [FORALL][VARS]an object X[/VARS] [OR][SEG] object X is an instance of moose[/SEG] [SEG]Antler1 is a part of object X[/SEG][/OR][/FORALL]
+23.	(or
+    (forall (?X0)
+        (or
+            (not
+                (part Antler1 ?X0))
+            (not
+                (instance ?X0 Moose))))
+    (not spl873_7))	22 [avatar_component_clause]	[OR][SEG][FORALL][VARS]An object X[/VARS] [OR][SEG]Antler1 is a part of object X[/SEG] [SEG] object X is an instance of moose[/SEG][/OR][/FORALL][/SEG] [SEG]spl873_7[/SEG][/OR]
+24.	(<=> spl873_8
+    (ans0
+        (sK33 Antler1)))	[definition]	spl873_8 ans0 sK33 Antler1
+25.	(or
+    (not
+        (ans0
+            (sK33 Antler1))) spl873_8)	24 [avatar_component_clause]	[OR][SEG]ans0 sK33 Antler1[/SEG] [SEG]spl873_8[/SEG][/OR]
+26.	(<=> spl873_9
+    (instance
+        (sK33 Antler1) Tine))	[definition]	spl873_9 sK33 Antler1 is an instance of tine
+27.	(or
+    (not
+        (instance
+            (sK33 Antler1) Tine)) spl873_9)	26 [avatar_component_clause]	[OR][SEG]sK33 Antler1 is an instance of tine[/SEG] [SEG]spl873_9[/SEG][/OR]
+28.	(or spl873_7
+    (not spl873_8)
+    (not spl873_9))	21 26 24 22 [avatar_split_clause]	[OR][SEG]spl873_7[/SEG] [SEG]spl873_8[/SEG] [SEG]spl873_9[/SEG][/OR]
+29.	(forall (?X0)
+    (ans0 ?X0))	[definition]	[FORALL][VARS]?X0[/VARS] ans0 ?X0[/FORALL]
+30.	(or
+    (forall (?X0)
+        (or
+            (not
+                (instance ?X0 Moose))
+            (not
+                (instance Antler1 Horn))
+            (not
+                (part Antler1 ?X0)))) spl873_9)	27 16 [resolution]	[OR][SEG][FORALL][VARS]An object X[/VARS] [OR][SEG] object X is an instance of moose[/SEG] [SEG]Antler1 is an instance of horn[/SEG] [SEG]Antler1 is a part of object X[/SEG][/OR][/FORALL][/SEG] [SEG]spl873_9[/SEG][/OR]
+31.	(or
+    (forall (?X0)
+        (or
+            (not
+                (instance ?X0 Moose))
+            (not
+                (part Antler1 ?X0)))) spl873_9)	30 18 [forward_subsumption_resolution]	[OR][SEG][FORALL][VARS]An object X[/VARS] [OR][SEG] object X is an instance of moose[/SEG] [SEG]Antler1 is a part of object X[/SEG][/OR][/FORALL][/SEG] [SEG]spl873_9[/SEG][/OR]
+32.	(or spl873_7 spl873_9)	31 26 22 [avatar_split_clause]	[OR][SEG]spl873_7[/SEG] [SEG]spl873_9[/SEG][/OR]
+33.	(or false spl873_8)	25 29 [unit_resulting_resolution]	[OR][SEG]false[/SEG] [SEG]spl873_8[/SEG][/OR]
+34.	spl873_8	33 [avatar_contradiction_clause]	spl873_8
+35.	(or
+    (not
+        (instance Moose1 Moose))
+    (not spl873_7))	23 17 [unit_resulting_resolution]	[OR][SEG]Moose1 is an instance of moose[/SEG] [SEG]spl873_7[/SEG][/OR]
+36.	(or false
+    (not spl873_7))	35 19 [forward_subsumption_resolution]	[OR][SEG]false[/SEG] [SEG]spl873_7[/SEG][/OR]
+37.	(not spl873_7)	36 [avatar_contradiction_clause]	spl873_7
+38.	QED	39 [avatar_sat_refutation]	true

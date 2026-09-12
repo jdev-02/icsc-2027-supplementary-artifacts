@@ -1,0 +1,76 @@
+# Penguin cannot fly
+# Table I row: Penguin cannot fly
+# Pattern: Universal negation
+# Time: 0.795s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+ime: 795ms / 30000ms limit
+Raw Prover Output (77 lines)
+Answers
+No explicit answer bindings were produced.
+1.	(forall (?X0)
+    (=>
+        (instance ?X0 Penguin)
+        (not
+            (exists (?X1)
+                (and
+                    (instance ?X1 Flying)
+                    (agent ?X1 ?X0))))))		[FORALL][VARS]An agent X[/VARS] [IF_A] agent X is an instance of penguin[/IF_A][IF_C] a process Y [AND][SEG] process Y is an instance of flying[/SEG] [SEG] agent X is an agent of process Y[/SEG][/AND][/IF_C][/FORALL]
+2.	(instance Penguin1 Penguin)		Penguin1 is an instance of penguin
+3.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Flying)
+            (agent ?X0 Penguin1))))		A process X [AND][SEG] process X is an instance of flying[/SEG] [SEG]Penguin1 is an agent of process X[/SEG][/AND]
+4.	(not
+    (not
+        (exists (?X0)
+            (and
+                (instance ?X0 Flying)
+                (agent ?X0 Penguin1)))))	3 [negated_conjecture]	A process X [AND][SEG] process X is an instance of flying[/SEG] [SEG]Penguin1 is an agent of process X[/SEG][/AND]
+5.	(exists (?X0)
+    (and
+        (instance ?X0 Flying)
+        (agent ?X0 Penguin1)))	4 [flattening]	A process X [AND][SEG] process X is an instance of flying[/SEG] [SEG]Penguin1 is an agent of process X[/SEG][/AND]
+6.	(forall (?X0)
+    (or
+        (forall (?X1)
+            (or
+                (not
+                    (instance ?X1 Flying))
+                (not
+                    (agent ?X1 ?X0))))
+        (not
+            (instance ?X0 Penguin))))	1 [ennf_transformation]	[FORALL][VARS]An agent X[/VARS] [OR][SEG][FORALL][VARS]a process Y[/VARS] [OR][SEG] process Y is an instance of flying[/SEG] [SEG] agent X is an agent of process Y[/SEG][/OR][/FORALL][/SEG] [SEG] agent X is an instance of penguin[/SEG][/OR][/FORALL]
+7.	(=>
+    (exists (?X0)
+        (and
+            (instance ?X0 Flying)
+            (agent ?X0 Penguin1)))
+    (and
+        (instance sK1 Flying)
+        (agent sK1 Penguin1)))	[definition]	[IF_A] A process X [AND][SEG] process X is an instance of flying[/SEG] [SEG]Penguin1 is an agent of process X[/SEG][/AND][/IF_A][IF_C][AND][SEG]sK1 is an instance of flying[/SEG] [SEG]Penguin1 is an agent of sK1[/SEG][/AND][/IF_C]
+8.	(and
+    (instance sK1 Flying)
+    (agent sK1 Penguin1))	5 7 [skolemisation]	[AND][SEG]sK1 is an instance of flying[/SEG] [SEG]Penguin1 is an agent of sK1[/SEG][/AND]
+9.	(agent sK1 Penguin1)	8 [cnf_transformation]	Penguin1 is an agent of sK1
+10.	(instance sK1 Flying)	8 [cnf_transformation]	sK1 is an instance of flying
+11.	(forall (?X0 ?X1)
+    (or
+        (not
+            (agent ?X1 ?X0))
+        (not
+            (instance ?X1 Flying))
+        (not
+            (instance ?X0 Penguin))))	6 [cnf_transformation]	[FORALL][VARS]An agent X a process Y[/VARS] [OR][SEG] agent X is an agent of process Y[/SEG] [SEG] process Y is an instance of flying[/SEG] [SEG] agent X is an instance of penguin[/SEG][/OR][/FORALL]
+12.	(instance Penguin1 Penguin)	2 [cnf_transformation]	Penguin1 is an instance of penguin
+13.	(or
+    (not
+        (instance sK1 Flying))
+    (not
+        (instance Penguin1 Penguin)))	11 9 [resolution]	[OR][SEG]sK1 is an instance of flying[/SEG] [SEG]Penguin1 is an instance of penguin[/SEG][/OR]
+14.	(not
+    (instance Penguin1 Penguin))	13 10 [forward_subsumption_resolution]	Penguin1 is an instance of penguin
+15.	QED	14 12 [forward_subsumption_resolution]	true

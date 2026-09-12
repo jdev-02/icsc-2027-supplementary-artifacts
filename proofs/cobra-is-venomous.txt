@@ -1,0 +1,35 @@
+# Cobra is Venomous
+# Table I row: Cobra is Venomous
+# Pattern: Direct attribute
+# Time: 0.869s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+1. cobra test: Time: 869ms / 30000ms limit
+
+1.	(forall (?X0)
+    (=>
+        (instance ?X0 Cobra)
+        (attribute ?X0 Venomous)))		[FORALL][VARS]An object X[/VARS] [IF_A] object X is an instance of cobra[/IF_A][IF_C]venomous is an attribute of object X[/IF_C][/FORALL]
+2.	(instance Cobra1 Cobra)		Cobra1 is an instance of cobra
+3.	(attribute Cobra1 Venomous)		Venomous is an attribute of Cobra1
+4.	(not
+    (attribute Cobra1 Venomous))	3 [negated_conjecture]	Venomous is an attribute of Cobra1
+5.	(not
+    (attribute Cobra1 Venomous))	4 [flattening]	Venomous is an attribute of Cobra1
+6.	(forall (?X0)
+    (or
+        (attribute ?X0 Venomous)
+        (not
+            (instance ?X0 Cobra))))	1 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of cobra[/SEG][/OR][/FORALL]
+7.	(not
+    (attribute Cobra1 Venomous))	5 [cnf_transformation]	Venomous is an attribute of Cobra1
+8.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Cobra))
+        (attribute ?X0 Venomous)))	6 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object X is an instance of cobra[/SEG] [SEG]venomous is an attribute of object X[/SEG][/OR][/FORALL]
+9.	(instance Cobra1 Cobra)	2 [cnf_transformation]	Cobra1 is an instance of cobra
+10.	(attribute Cobra1 Venomous)	8 9 [resolution]	Venomous is an attribute of Cobra1
+11.	QED	10 7 [forward_subsumption_resolution]	true

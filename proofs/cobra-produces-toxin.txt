@@ -1,0 +1,289 @@
+# Cobra produces Toxin
+# Table I row: Cobra produces Toxin
+# Pattern: Multi-step causal chain
+# Time: 25.884s (of 30s default limit)
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+cobra toxin: Time: 25884ms / 30000ms limit
+
+Input: FOF
+Time: 26005ms / 30000ms limit
+Raw Prover Output (1690 lines)
+Answers
+1. sK19(Cobra1)
+1 answer shown.
+1.	(forall (?X0)
+    (=>
+        (and
+            (attribute ?X0 Venomous)
+            (instance ?X0 Organism))
+        (exists (?X1)
+            (and
+                (instance ?X1 Toxin)
+                (part ?X1 ?X0)))))		[FORALL][VARS]An object X[/VARS] [IF_A][AND][SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/AND][/IF_A][IF_C] object Y [AND][SEG] object Y is an instance of toxin[/SEG] [SEG] object Y is a part of object X[/SEG][/AND][/IF_C][/FORALL]
+2.	(forall (?X0 ?X1 ?X2)
+    (=>
+        (and
+            (instance ?X0 Class)
+            (instance ?X1 Class))
+        (=>
+            (and
+                (subclass ?X0 ?X1)
+                (instance ?X2 ?X0))
+            (instance ?X2 ?X1))))		[FORALL][VARS]A class X class Y and an entity Z[/VARS] [IF_A][AND][SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/AND][/IF_A][IF_C][IF_A][AND][SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG][/AND][/IF_A][IF_C] entity Z is an instance of class Y[/IF_C][/IF_C][/FORALL]
+3.	(forall (?X0)
+    (=>
+        (instance ?X0 Cobra)
+        (attribute ?X0 Venomous)))		[FORALL][VARS]An object X[/VARS] [IF_A] object X is an instance of cobra[/IF_A][IF_C]venomous is an attribute of object X[/IF_C][/FORALL]
+4.	(instance Organism Class)		Organism is an instance of class
+5.	(subclass Cobra Organism)		Cobra is a subclass of organism
+6.	(instance Cobra Class)		Cobra is an instance of class
+7.	(instance Cobra1 Cobra)		Cobra1 is an instance of cobra
+8.	(exists (?X0)
+    (and
+        (instance ?X0 Toxin)
+        (part ?X0 Cobra1)))		An object X [AND][SEG] object X is an instance of toxin[/SEG] [SEG] object X is a part of Cobra1[/SEG][/AND]
+9.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Toxin)
+            (part ?X0 Cobra1))))	8 [negated_conjecture]	An object X [AND][SEG] object X is an instance of toxin[/SEG] [SEG] object X is a part of Cobra1[/SEG][/AND]
+10.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Toxin)
+            (part ?X0 Cobra1)
+            (ans0 ?X0))))	9 [answer_literal_injection]	An object X [AND][SEG] object X is an instance of toxin[/SEG] [SEG] object X is a part of Cobra1[/SEG] [SEG]ans0 object X[/SEG][/AND]
+11.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Toxin)
+            (part ?X0 Cobra1)
+            (ans0 ?X0))))	10 [flattening]	An object X [AND][SEG] object X is an instance of toxin[/SEG] [SEG] object X is a part of Cobra1[/SEG] [SEG]ans0 object X[/SEG][/AND]
+12.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Toxin))
+        (not
+            (part ?X0 Cobra1))
+        (not
+            (ans0 ?X0))))	11 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object X is an instance of toxin[/SEG] [SEG] object X is a part of Cobra1[/SEG] [SEG]ans0 object X[/SEG][/OR][/FORALL]
+13.	(forall (?X0 ?X1 ?X2)
+    (or
+        (instance ?X2 ?X1)
+        (not
+            (subclass ?X0 ?X1))
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	2 [ennf_transformation]	[FORALL][VARS]A class X class Y and an entity Z[/VARS] [OR][SEG] entity Z is an instance of class Y[/SEG] [SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG] [SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/OR][/FORALL]
+14.	(forall (?X0 ?X1 ?X2)
+    (or
+        (instance ?X2 ?X1)
+        (not
+            (subclass ?X0 ?X1))
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	13 [flattening]	[FORALL][VARS]A class X class Y and an entity Z[/VARS] [OR][SEG] entity Z is an instance of class Y[/SEG] [SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG] [SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/OR][/FORALL]
+15.	(forall (?X0)
+    (or
+        (attribute ?X0 Venomous)
+        (not
+            (instance ?X0 Cobra))))	3 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of cobra[/SEG][/OR][/FORALL]
+16.	(forall (?X0)
+    (or
+        (exists (?X1)
+            (and
+                (instance ?X1 Toxin)
+                (part ?X1 ?X0)))
+        (not
+            (attribute ?X0 Venomous))
+        (not
+            (instance ?X0 Organism))))	1 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object Y [AND][SEG] object Y is an instance of toxin[/SEG] [SEG] object Y is a part of object X[/SEG][/AND][/SEG] [SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/OR][/FORALL]
+17.	(forall (?X0)
+    (or
+        (exists (?X1)
+            (and
+                (instance ?X1 Toxin)
+                (part ?X1 ?X0)))
+        (not
+            (attribute ?X0 Venomous))
+        (not
+            (instance ?X0 Organism))))	16 [flattening]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object Y [AND][SEG] object Y is an instance of toxin[/SEG] [SEG] object Y is a part of object X[/SEG][/AND][/SEG] [SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/OR][/FORALL]
+18.	(forall (?X0)
+    (=>
+        (exists (?X1)
+            (and
+                (instance ?X1 Toxin)
+                (part ?X1 ?X0)))
+        (and
+            (instance
+                (sK19 ?X0) Toxin)
+            (part
+                (sK19 ?X0) ?X0))))	[definition]	[FORALL][VARS]An object X[/VARS] [IF_A] object Y [AND][SEG] object Y is an instance of toxin[/SEG] [SEG] object Y is a part of object X[/SEG][/AND][/IF_A][IF_C][AND][SEG]sK19 object X is an instance of toxin[/SEG] [SEG]sK19 object X is a part of object X[/SEG][/AND][/IF_C][/FORALL]
+19.	(forall (?X0)
+    (or
+        (and
+            (instance
+                (sK19 ?X0) Toxin)
+            (part
+                (sK19 ?X0) ?X0))
+        (not
+            (attribute ?X0 Venomous))
+        (not
+            (instance ?X0 Organism))))	17 18 [skolemisation]	[FORALL][VARS]An object X[/VARS] [OR][SEG][AND][SEG]sK19 object X is an instance of toxin[/SEG] [SEG]sK19 object X is a part of object X[/SEG][/AND][/SEG] [SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/OR][/FORALL]
+20.	(forall (?X0)
+    (or
+        (not
+            (part ?X0 Cobra1))
+        (not
+            (instance ?X0 Toxin))
+        (not
+            (ans0 ?X0))))	12 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object X is a part of Cobra1[/SEG] [SEG] object X is an instance of toxin[/SEG] [SEG]ans0 object X[/SEG][/OR][/FORALL]
+21.	(instance Cobra1 Cobra)	7 [cnf_transformation]	Cobra1 is an instance of cobra
+22.	(forall (?X2 ?X0 ?X1)
+    (or
+        (instance ?X2 ?X1)
+        (not
+            (subclass ?X0 ?X1))
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	14 [cnf_transformation]	[FORALL][VARS]An entity X a class Y and class Z[/VARS] [OR][SEG] entity X is an instance of class Z[/SEG] [SEG] class Y is a subclass of class Z[/SEG] [SEG] entity X is an instance of class Y[/SEG] [SEG] class Y is an instance of class[/SEG] [SEG] class Z is an instance of class[/SEG][/OR][/FORALL]
+23.	(instance Cobra Class)	6 [cnf_transformation]	Cobra is an instance of class
+24.	(subclass Cobra Organism)	5 [cnf_transformation]	Cobra is a subclass of organism
+25.	(forall (?X0)
+    (or
+        (attribute ?X0 Venomous)
+        (not
+            (instance ?X0 Cobra))))	15 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of cobra[/SEG][/OR][/FORALL]
+26.	(instance Organism Class)	4 [cnf_transformation]	Organism is an instance of class
+27.	(forall (?X0)
+    (or
+        (not
+            (attribute ?X0 Venomous))
+        (part
+            (sK19 ?X0) ?X0)
+        (not
+            (instance ?X0 Organism))))	19 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]venomous is an attribute of object X[/SEG] [SEG]sK19 object X is a part of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/OR][/FORALL]
+28.	(forall (?X0)
+    (or
+        (instance
+            (sK19 ?X0) Toxin)
+        (not
+            (attribute ?X0 Venomous))
+        (not
+            (instance ?X0 Organism))))	19 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]sK19 object X is an instance of toxin[/SEG] [SEG]venomous is an attribute of object X[/SEG] [SEG] object X is an instance of organism[/SEG][/OR][/FORALL]
+29.	(forall (?X0)
+    (ans0 ?X0))	[definition]	[FORALL][VARS]?X0[/VARS] ans0 ?X0[/FORALL]
+30.	(forall (?X0)
+    (or
+        (part
+            (sK19 ?X0) ?X0)
+        (not
+            (instance ?X0 Organism))
+        (not
+            (instance ?X0 Cobra))))	27 25 [resolution]	[FORALL][VARS]An object X[/VARS] [OR][SEG]sK19 object X is a part of object X[/SEG] [SEG] object X is an instance of organism[/SEG] [SEG] object X is an instance of cobra[/SEG][/OR][/FORALL]
+31.	(or
+    (not
+        (instance Cobra1 Organism))
+    (not
+        (instance Cobra1 Cobra))
+    (not
+        (instance
+            (sK19 Cobra1) Toxin))
+    (not
+        (ans0
+            (sK19 Cobra1))))	30 20 [resolution]	[OR][SEG]Cobra1 is an instance of organism[/SEG] [SEG]Cobra1 is an instance of cobra[/SEG] [SEG]sK19 Cobra1 is an instance of toxin[/SEG] [SEG]ans0 sK19 Cobra1[/SEG][/OR]
+32.	(or
+    (not
+        (instance Cobra1 Organism))
+    (not
+        (instance
+            (sK19 Cobra1) Toxin))
+    (not
+        (ans0
+            (sK19 Cobra1))))	31 21 [forward_subsumption_resolution]	[OR][SEG]Cobra1 is an instance of organism[/SEG] [SEG]sK19 Cobra1 is an instance of toxin[/SEG] [SEG]ans0 sK19 Cobra1[/SEG][/OR]
+33.	(<=> spl77_69
+    (ans0
+        (sK19 Cobra1)))	[definition]	spl77_69 ans0 sK19 Cobra1
+34.	(or
+    (not
+        (ans0
+            (sK19 Cobra1))) spl77_69)	33 [avatar_component_clause]	[OR][SEG]ans0 sK19 Cobra1[/SEG] [SEG]spl77_69[/SEG][/OR]
+35.	(<=> spl77_70
+    (instance
+        (sK19 Cobra1) Toxin))	[definition]	spl77_70 sK19 Cobra1 is an instance of toxin
+36.	(or
+    (not
+        (instance
+            (sK19 Cobra1) Toxin)) spl77_70)	35 [avatar_component_clause]	[OR][SEG]sK19 Cobra1 is an instance of toxin[/SEG] [SEG]spl77_70[/SEG][/OR]
+37.	(<=> spl77_71
+    (instance Cobra1 Organism))	[definition]	spl77_71 Cobra1 is an instance of organism
+38.	(or
+    (not
+        (instance Cobra1 Organism)) spl77_71)	37 [avatar_component_clause]	[OR][SEG]Cobra1 is an instance of organism[/SEG] [SEG]spl77_71[/SEG][/OR]
+39.	(or
+    (not spl77_69)
+    (not spl77_70)
+    (not spl77_71))	32 37 35 33 [avatar_split_clause]	[OR][SEG]spl77_69[/SEG] [SEG]spl77_70[/SEG] [SEG]spl77_71[/SEG][/OR]
+40.	(or false spl77_69)	34 29 [unit_resulting_resolution]	[OR][SEG]false[/SEG] [SEG]spl77_69[/SEG][/OR]
+41.	spl77_69	40 [avatar_contradiction_clause]	spl77_69
+42.	(or
+    (not
+        (attribute Cobra1 Venomous))
+    (not
+        (instance Cobra1 Organism)) spl77_70)	36 28 [resolution]	[OR][SEG]Venomous is an attribute of Cobra1[/SEG] [SEG]Cobra1 is an instance of organism[/SEG] [SEG]spl77_70[/SEG][/OR]
+43.	(<=> spl77_74
+    (attribute Cobra1 Venomous))	[definition]	spl77_74 venomous is an attribute of Cobra1
+44.	(or
+    (not
+        (attribute Cobra1 Venomous)) spl77_74)	43 [avatar_component_clause]	[OR][SEG]Venomous is an attribute of Cobra1[/SEG] [SEG]spl77_74[/SEG][/OR]
+45.	(or
+    (not spl77_71)
+    (not spl77_74) spl77_70)	42 35 43 37 [avatar_split_clause]	[OR][SEG]spl77_71[/SEG] [SEG]spl77_74[/SEG] [SEG]spl77_70[/SEG][/OR]
+46.	(or
+    (forall (?X0)
+        (or
+            (not
+                (subclass ?X0 Organism))
+            (not
+                (instance Cobra1 ?X0))
+            (not
+                (instance ?X0 Class))
+            (not
+                (instance Organism Class)))) spl77_71)	38 22 [resolution]	[OR][SEG][FORALL][VARS]A class X[/VARS] [OR][SEG] class X is a subclass of organism[/SEG] [SEG]Cobra1 is an instance of class X[/SEG] [SEG] class X is an instance of class[/SEG] [SEG]organism is an instance of class[/SEG][/OR][/FORALL][/SEG] [SEG]spl77_71[/SEG][/OR]
+47.	(or
+    (forall (?X0)
+        (or
+            (not
+                (instance Cobra1 ?X0))
+            (not
+                (subclass ?X0 Organism))
+            (not
+                (instance ?X0 Class)))) spl77_71)	46 26 [forward_subsumption_resolution]	[OR][SEG][FORALL][VARS]A class X[/VARS] [OR][SEG]Cobra1 is an instance of class X[/SEG] [SEG] class X is a subclass of organism[/SEG] [SEG] class X is an instance of class[/SEG][/OR][/FORALL][/SEG] [SEG]spl77_71[/SEG][/OR]
+48.	(or
+    (not
+        (subclass Cobra Organism))
+    (not
+        (instance Cobra Class)) spl77_71)	47 21 [resolution]	[OR][SEG]Cobra is a subclass of organism[/SEG] [SEG]cobra is an instance of class[/SEG] [SEG]spl77_71[/SEG][/OR]
+49.	(or
+    (not
+        (instance Cobra Class)) spl77_71)	48 24 [forward_subsumption_resolution]	[OR][SEG]Cobra is an instance of class[/SEG] [SEG]spl77_71[/SEG][/OR]
+50.	(or false spl77_71)	49 23 [forward_subsumption_resolution]	[OR][SEG]false[/SEG] [SEG]spl77_71[/SEG][/OR]
+51.	spl77_71	50 [avatar_contradiction_clause]	spl77_71
+52.	(or
+    (not
+        (instance Cobra1 Cobra)) spl77_74)	44 25 [resolution]	[OR][SEG]Cobra1 is an instance of cobra[/SEG] [SEG]spl77_74[/SEG][/OR]
+53.	(or false spl77_74)	52 21 [forward_subsumption_resolution]	[OR][SEG]false[/SEG] [SEG]spl77_74[/SEG][/OR]
+54.	spl77_74	53 [avatar_contradiction_clause]	spl77_74
+55.	QED	56 [avatar_sat_refutation]	true

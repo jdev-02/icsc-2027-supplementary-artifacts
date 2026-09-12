@@ -1,0 +1,35 @@
+# Hawk is Diurnal
+# Table I row: Hawk is Diurnal
+# Pattern: Direct attribute
+# Time: 0.829s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+hawk diurnal: Time: 829ms / 30000ms limit
+
+.	(forall (?X0)
+    (=>
+        (instance ?X0 Hawk)
+        (attribute ?X0 Diurnal)))		[FORALL][VARS]An object X[/VARS] [IF_A] object X is an instance of hawk[/IF_A][IF_C]diurnal is an attribute of object X[/IF_C][/FORALL]
+2.	(instance Hawk1 Hawk)		Hawk1 is an instance of hawk
+3.	(attribute Hawk1 Diurnal)		Diurnal is an attribute of Hawk1
+4.	(not
+    (attribute Hawk1 Diurnal))	3 [negated_conjecture]	Diurnal is an attribute of Hawk1
+5.	(not
+    (attribute Hawk1 Diurnal))	4 [flattening]	Diurnal is an attribute of Hawk1
+6.	(forall (?X0)
+    (or
+        (attribute ?X0 Diurnal)
+        (not
+            (instance ?X0 Hawk))))	1 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]diurnal is an attribute of object X[/SEG] [SEG] object X is an instance of hawk[/SEG][/OR][/FORALL]
+7.	(not
+    (attribute Hawk1 Diurnal))	5 [cnf_transformation]	Diurnal is an attribute of Hawk1
+8.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Hawk))
+        (attribute ?X0 Diurnal)))	6 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG] object X is an instance of hawk[/SEG] [SEG]diurnal is an attribute of object X[/SEG][/OR][/FORALL]
+9.	(instance Hawk1 Hawk)	2 [cnf_transformation]	Hawk1 is an instance of hawk
+10.	(attribute Hawk1 Diurnal)	8 9 [resolution]	Diurnal is an attribute of Hawk1
+11.	QED	10 7 [forward_subsumption_resolution]	true

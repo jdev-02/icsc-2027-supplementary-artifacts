@@ -1,0 +1,60 @@
+# Nocturnal Human not Healthy
+# Table I row: Nocturnal Human not Healthy
+# Pattern: Cross-file rule chain
+# Time: 0.011s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+nocturnal human health:
+
+1.	(forall (?X0)
+    (=>
+        (and
+            (instance ?X0 Human)
+            (attribute ?X0 Nocturnal))
+        (not
+            (attribute ?X0 Healthy))))		[FORALL][VARS]An object X[/VARS] [IF_A][AND][SEG] object X is an instance of human[/SEG] [SEG]nocturnal is an attribute of object X[/SEG][/AND][/IF_A][IF_C]healthy is an attribute of object X[/IF_C][/FORALL]
+2.	(instance Human1 Human)		Human1 is an instance of human
+3.	(not
+    (attribute Human1 Healthy))		Healthy is an attribute of Human1
+4.	(not
+    (not
+        (attribute Human1 Healthy)))	3 [negated_conjecture]	Healthy is an attribute of Human1
+5.	(attribute Human1 Nocturnal)		Nocturnal is an attribute of Human1
+6.	(attribute Human1 Healthy)	4 [flattening]	Healthy is an attribute of Human1
+7.	(forall (?X0)
+    (or
+        (not
+            (attribute ?X0 Healthy))
+        (not
+            (instance ?X0 Human))
+        (not
+            (attribute ?X0 Nocturnal))))	1 [ennf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]healthy is an attribute of object X[/SEG] [SEG] object X is an instance of human[/SEG] [SEG]nocturnal is an attribute of object X[/SEG][/OR][/FORALL]
+8.	(forall (?X0)
+    (or
+        (not
+            (attribute ?X0 Healthy))
+        (not
+            (instance ?X0 Human))
+        (not
+            (attribute ?X0 Nocturnal))))	7 [flattening]	[FORALL][VARS]An object X[/VARS] [OR][SEG]healthy is an attribute of object X[/SEG] [SEG] object X is an instance of human[/SEG] [SEG]nocturnal is an attribute of object X[/SEG][/OR][/FORALL]
+9.	(attribute Human1 Healthy)	6 [cnf_transformation]	Healthy is an attribute of Human1
+10.	(attribute Human1 Nocturnal)	5 [cnf_transformation]	Nocturnal is an attribute of Human1
+11.	(instance Human1 Human)	2 [cnf_transformation]	Human1 is an instance of human
+12.	(forall (?X0)
+    (or
+        (not
+            (attribute ?X0 Nocturnal))
+        (not
+            (instance ?X0 Human))
+        (not
+            (attribute ?X0 Healthy))))	8 [cnf_transformation]	[FORALL][VARS]An object X[/VARS] [OR][SEG]nocturnal is an attribute of object X[/SEG] [SEG] object X is an instance of human[/SEG] [SEG]healthy is an attribute of object X[/SEG][/OR][/FORALL]
+13.	(or
+    (not
+        (instance Human1 Human))
+    (not
+        (attribute Human1 Healthy)))	12 10 [resolution]	[OR][SEG]Human1 is an instance of human[/SEG] [SEG]healthy is an attribute of Human1[/SEG][/OR]
+14.	(not
+    (attribute Human1 Healthy))	13 11 [forward_subsumption_resolution]	Healthy is an attribute of Human1
+15.	QED	14 9 [forward_subsumption_resolution]	true

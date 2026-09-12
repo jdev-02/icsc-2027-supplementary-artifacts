@@ -1,0 +1,93 @@
+# Falcon is a Carnivore
+# Table I row: Falcon is a Carnivore
+# Pattern: Subclass chain
+# Time: 0.783s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+Time: 783ms / 30000ms limit
+Raw Prover Output (95 lines)
+Answers
+No explicit answer bindings were produced.
+1.	(forall (?X0 ?X1 ?X2)
+    (=>
+        (and
+            (instance ?X0 Class)
+            (instance ?X1 Class))
+        (=>
+            (and
+                (subclass ?X0 ?X1)
+                (instance ?X2 ?X0))
+            (instance ?X2 ?X1))))		[FORALL][VARS]A class X class Y and an entity Z[/VARS] [IF_A][AND][SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/AND][/IF_A][IF_C][IF_A][AND][SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG][/AND][/IF_A][IF_C] entity Z is an instance of class Y[/IF_C][/IF_C][/FORALL]
+2.	(instance Carnivore Class)		Carnivore is an instance of class
+3.	(instance Falcon Class)		Falcon is an instance of class
+4.	(subclass Falcon Carnivore)		Falcon is a subclass of carnivore
+5.	(instance Falcon1 Falcon)		Falcon1 is an instance of falcon
+6.	(instance Falcon1 Carnivore)		Falcon1 is an instance of carnivore
+7.	(not
+    (instance Falcon1 Carnivore))	6 [negated_conjecture]	Falcon1 is an instance of carnivore
+8.	(not
+    (instance Falcon1 Carnivore))	7 [flattening]	Falcon1 is an instance of carnivore
+9.	(forall (?X0 ?X1 ?X2)
+    (or
+        (instance ?X2 ?X1)
+        (not
+            (subclass ?X0 ?X1))
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	1 [ennf_transformation]	[FORALL][VARS]A class X class Y and an entity Z[/VARS] [OR][SEG] entity Z is an instance of class Y[/SEG] [SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG] [SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/OR][/FORALL]
+10.	(forall (?X0 ?X1 ?X2)
+    (or
+        (instance ?X2 ?X1)
+        (not
+            (subclass ?X0 ?X1))
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	9 [flattening]	[FORALL][VARS]A class X class Y and an entity Z[/VARS] [OR][SEG] entity Z is an instance of class Y[/SEG] [SEG] class X is a subclass of class Y[/SEG] [SEG] entity Z is an instance of class X[/SEG] [SEG] class X is an instance of class[/SEG] [SEG] class Y is an instance of class[/SEG][/OR][/FORALL]
+11.	(not
+    (instance Falcon1 Carnivore))	8 [cnf_transformation]	Falcon1 is an instance of carnivore
+12.	(instance Carnivore Class)	2 [cnf_transformation]	Carnivore is an instance of class
+13.	(instance Falcon1 Falcon)	5 [cnf_transformation]	Falcon1 is an instance of falcon
+14.	(forall (?X2 ?X0 ?X1)
+    (or
+        (not
+            (subclass ?X0 ?X1))
+        (instance ?X2 ?X1)
+        (not
+            (instance ?X2 ?X0))
+        (not
+            (instance ?X0 Class))
+        (not
+            (instance ?X1 Class))))	10 [cnf_transformation]	[FORALL][VARS]An entity X a class Y and class Z[/VARS] [OR][SEG] class Y is a subclass of class Z[/SEG] [SEG] entity X is an instance of class Z[/SEG] [SEG] entity X is an instance of class Y[/SEG] [SEG] class Y is an instance of class[/SEG] [SEG] class Z is an instance of class[/SEG][/OR][/FORALL]
+15.	(subclass Falcon Carnivore)	4 [cnf_transformation]	Falcon is a subclass of carnivore
+16.	(instance Falcon Class)	3 [cnf_transformation]	Falcon is an instance of class
+17.	(forall (?X0)
+    (or
+        (instance ?X0 Carnivore)
+        (not
+            (instance ?X0 Falcon))
+        (not
+            (instance Falcon Class))
+        (not
+            (instance Carnivore Class))))	14 15 [resolution]	[FORALL][VARS]An entity X[/VARS] [OR][SEG] entity X is an instance of carnivore[/SEG] [SEG] entity X is an instance of falcon[/SEG] [SEG]falcon is an instance of class[/SEG] [SEG]carnivore is an instance of class[/SEG][/OR][/FORALL]
+18.	(forall (?X0)
+    (or
+        (instance ?X0 Carnivore)
+        (not
+            (instance ?X0 Falcon))
+        (not
+            (instance Carnivore Class))))	17 16 [forward_subsumption_resolution]	[FORALL][VARS]An entity X[/VARS] [OR][SEG] entity X is an instance of carnivore[/SEG] [SEG] entity X is an instance of falcon[/SEG] [SEG]carnivore is an instance of class[/SEG][/OR][/FORALL]
+19.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Falcon))
+        (instance ?X0 Carnivore)))	18 12 [forward_subsumption_resolution]	[FORALL][VARS]An entity X[/VARS] [OR][SEG] entity X is an instance of falcon[/SEG] [SEG] entity X is an instance of carnivore[/SEG][/OR][/FORALL]
+20.	(instance Falcon1 Carnivore)	19 13 [resolution]	Falcon1 is an instance of carnivore
+21.	QED	20 11 [forward_subsumption_resolution]	true

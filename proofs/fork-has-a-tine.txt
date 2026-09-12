@@ -1,0 +1,122 @@
+# Fork has a Tine
+# Table I row: Fork has a Tine
+# Pattern: Existential witness
+# Time: 0.833s
+# Prover: Vampire 5.0.1, run via SigmaKEE's Ask/Tell interface.
+# Vampire's internal file-provenance tags (temp session-file paths) removed;
+# not needed to read the proof, and not worth keeping around.
+
+fork tine:
+
+Time: 833ms / 30000ms limit
+Raw Prover Output (91 lines)
+Answers
+1. sK4(Fork1)
+1 answer shown.
+1.	(forall (?X0)
+    (=>
+        (instance ?X0 Fork)
+        (exists (?X1)
+            (and
+                (instance ?X1 Tine)
+                (component ?X1 ?X0)))))		[FORALL][VARS]A corpuscular object X[/VARS] [IF_A] corpuscular object X is an instance of fork[/IF_A][IF_C] corpuscular object Y [AND][SEG] corpuscular object Y is an instance of tine[/SEG] [SEG] corpuscular object Y is a component of corpuscular object X[/SEG][/AND][/IF_C][/FORALL]
+2.	(instance Fork1 Fork)		Fork1 is an instance of fork
+3.	(exists (?X0)
+    (and
+        (instance ?X0 Tine)
+        (component ?X0 Fork1)))		A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Fork1[/SEG][/AND]
+4.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Fork1))))	3 [negated_conjecture]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Fork1[/SEG][/AND]
+5.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Fork1)
+            (ans0 ?X0))))	4 [answer_literal_injection]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Fork1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/AND]
+6.	(not
+    (exists (?X0)
+        (and
+            (instance ?X0 Tine)
+            (component ?X0 Fork1)
+            (ans0 ?X0))))	5 [flattening]	A corpuscular object X [AND][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Fork1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/AND]
+7.	(forall (?X0)
+    (or
+        (not
+            (instance ?X0 Tine))
+        (not
+            (component ?X0 Fork1))
+        (not
+            (ans0 ?X0))))	6 [ennf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG] corpuscular object X is an instance of tine[/SEG] [SEG] corpuscular object X is a component of Fork1[/SEG] [SEG]ans0 corpuscular object X[/SEG][/OR][/FORALL]
+8.	(forall (?X0)
+    (or
+        (exists (?X1)
+            (and
+                (instance ?X1 Tine)
+                (component ?X1 ?X0)))
+        (not
+            (instance ?X0 Fork))))	1 [ennf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG] corpuscular object Y [AND][SEG] corpuscular object Y is an instance of tine[/SEG] [SEG] corpuscular object Y is a component of corpuscular object X[/SEG][/AND][/SEG] [SEG] corpuscular object X is an instance of fork[/SEG][/OR][/FORALL]
+9.	(forall (?X0)
+    (=>
+        (exists (?X1)
+            (and
+                (instance ?X1 Tine)
+                (component ?X1 ?X0)))
+        (and
+            (instance
+                (sK4 ?X0) Tine)
+            (component
+                (sK4 ?X0) ?X0))))	[definition]	[FORALL][VARS]A corpuscular object X[/VARS] [IF_A] corpuscular object Y [AND][SEG] corpuscular object Y is an instance of tine[/SEG] [SEG] corpuscular object Y is a component of corpuscular object X[/SEG][/AND][/IF_A][IF_C][AND][SEG]sK4 corpuscular object X is an instance of tine[/SEG] [SEG]sK4 corpuscular object X is a component of corpuscular object X[/SEG][/AND][/IF_C][/FORALL]
+10.	(forall (?X0)
+    (or
+        (and
+            (instance
+                (sK4 ?X0) Tine)
+            (component
+                (sK4 ?X0) ?X0))
+        (not
+            (instance ?X0 Fork))))	8 9 [skolemisation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG][AND][SEG]sK4 corpuscular object X is an instance of tine[/SEG] [SEG]sK4 corpuscular object X is a component of corpuscular object X[/SEG][/AND][/SEG] [SEG] corpuscular object X is an instance of fork[/SEG][/OR][/FORALL]
+11.	(forall (?X0)
+    (or
+        (not
+            (component ?X0 Fork1))
+        (not
+            (instance ?X0 Tine))
+        (not
+            (ans0 ?X0))))	7 [cnf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG] corpuscular object X is a component of Fork1[/SEG] [SEG] corpuscular object X is an instance of tine[/SEG] [SEG]ans0 corpuscular object X[/SEG][/OR][/FORALL]
+12.	(forall (?X0)
+    (or
+        (component
+            (sK4 ?X0) ?X0)
+        (not
+            (instance ?X0 Fork))))	10 [cnf_transformation]	[FORALL][VARS]A corpuscular object X[/VARS] [OR][SEG]sK4 corpuscular object X is a component of corpuscular object X[/SEG] [SEG] corpuscular object X is an instance of fork[/SEG][/OR][/FORALL]
+13.	(forall (?X0)
+    (or
+        (instance
+            (sK4 ?X0) Tine)
+        (not
+            (instance ?X0 Fork))))	10 [cnf_transformation]	[FORALL][VARS]An entity X[/VARS] [OR][SEG]sK4 entity X is an instance of tine[/SEG] [SEG] entity X is an instance of fork[/SEG][/OR][/FORALL]
+14.	(instance Fork1 Fork)	2 [cnf_transformation]	Fork1 is an instance of fork
+15.	(or
+    (not
+        (instance Fork1 Fork))
+    (not
+        (instance
+            (sK4 Fork1) Tine))
+    (not
+        (ans0
+            (sK4 Fork1))))	12 11 [resolution]	[OR][SEG]Fork1 is an instance of fork[/SEG] [SEG]sK4 Fork1 is an instance of tine[/SEG] [SEG]ans0 sK4 Fork1[/SEG][/OR]
+16.	(or
+    (not
+        (instance Fork1 Fork))
+    (not
+        (ans0
+            (sK4 Fork1))))	15 13 [forward_subsumption_resolution]	[OR][SEG]Fork1 is an instance of fork[/SEG] [SEG]ans0 sK4 Fork1[/SEG][/OR]
+17.	(not
+    (ans0
+        (sK4 Fork1)))	16 14 [forward_subsumption_resolution]	ans0 sK4 Fork1
+18.	(forall (?X0)
+    (ans0 ?X0))	[definition]	[FORALL][VARS]?X0[/VARS] ans0 ?X0[/FORALL]
+19.	QED	17 18 [unit_resulting_resolution]	true
