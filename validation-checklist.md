@@ -31,7 +31,15 @@ correctly.
    worlds, a commitment the knowledge base almost never intends. SUMO's own corpus
    (`Merge.kif`, 18,800 lines) contains exactly one such axiom.
 
+6. **Type-compatibility check on relation arguments.** Verifies that every argument
+   given to a relation is type-compatible with that relation's declared
+   `domain`/`domainSubclass` restrictions. Catches a term that parses and scopes
+   correctly but assigns an argument of the wrong kind. This is the one check here that
+   touches semantics rather than pure syntax or structure, but only a narrow slice of
+   it: it cannot catch whether a rule represents the intended real-world meaning.
+
 Each check is mechanical and deterministic: given the same file, it produces the same
 pass/fail result every time, independent of which LLM or which session produced the
-file. None of the five requires understanding what the term means; that judgment stays
-with the human author (Layer 3) and the theorem prover (Layer 4).
+file. Five of the six are syntactic or structural and require no understanding of what
+the term means; that judgment stays with the human author (Layer 3) and the theorem
+prover (Layer 4).
