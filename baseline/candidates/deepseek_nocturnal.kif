@@ -1,0 +1,25 @@
+(subclass Nocturnal Attribute)
+
+(documentation Nocturnal EnglishLanguage "An Attribute that characterizes an Organism whose primary period of activity (including foraging, hunting, mating, or other BiologicalProcesses) occurs during the Night, i.e., the interval of darkness between sunset and sunrise. This attribute may also apply to processes or behaviors that are typically observed during the night.")
+
+(termFormat EnglishLanguage Nocturnal "nocturnal")
+
+(forall (?O)
+  (=> (and
+        (instance ?O Organism)
+        (attribute ?O Nocturnal))
+      (exists (?P ?N)
+        (and
+          (instance ?P BiologicalProcess)
+          (instance ?N Night)
+          (agent ?P ?O)
+          (during ?P ?N)))))
+
+(forall (?O)
+  (=>
+    (and
+      (instance ?O Organism)
+      (attribute ?O Nocturnal))
+    (not (attribute ?O Diurnal))))
+
+(not BiologicalAttribute)

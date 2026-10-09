@@ -1,0 +1,34 @@
+(instance Nocturnal BiologicalAttribute)
+
+(documentation Nocturnal EnglishLanguage "A &%BiologicalAttribute characterizing an
+&%Organism that is habitually active during the &%Nighttime and rests or sleeps
+during the &%Daytime, or describing an entity or event occurring at &%Nighttime.")
+
+(termFormat EnglishLanguage Nocturnal "nocturnal")
+
+(=>
+    (property ?ENTITY Nocturnal)
+    (or
+        (instance ?ENTITY Organism)
+        (instance ?ENTITY Process)))
+
+(=>
+    (and
+        (instance ?PROC Process)
+        (property ?PROC Nocturnal)
+        (time ?PROC ?TIME))
+    (exists (?NIGHT)
+        (and
+            (instance ?NIGHT Nighttime)
+            (during ?TIME ?NIGHT))))
+
+(=>
+    (and
+        (instance ?ORG Organism)
+        (property ?ORG Nocturnal))
+    (exists (?TIME ?NIGHT)
+        (and
+            (instance ?NIGHT Nighttime)
+            (during ?TIME ?NIGHT)
+            (holdsDuring ?TIME
+                (property ?ORG Awake)))))

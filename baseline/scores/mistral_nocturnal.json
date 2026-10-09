@@ -1,0 +1,8 @@
+{
+  "file": "mistral_nocturnal.kif",
+  "ingest_errors": [
+    "[parse/kif/quantifier-arg] quantifier operators' first argument must be a sentence comprised only of variables",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses"
+  ],
+  "candidate_validation_issues": []
+}

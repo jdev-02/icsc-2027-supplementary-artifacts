@@ -1,0 +1,72 @@
+{
+  "file": "llama_nocturnal.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "single-use-variable",
+      "message": "variable 'ACTIVITYDoing' is used only once -- likely a typo",
+      "file": "llama_nocturnal.kif",
+      "line": 28,
+      "col": 1,
+      "end_line": 36,
+      "end_col": 2
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "free-var-in-consequent",
+      "message": "variable 'ACTIVITYDoing' in consequent is not bound by antecedent or quantifier",
+      "file": "llama_nocturnal.kif",
+      "line": 28,
+      "col": 1,
+      "end_line": 36,
+      "end_col": 2
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "llama_nocturnal.kif",
+      "line": 28,
+      "col": 1,
+      "end_line": 36,
+      "end_col": 2
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "arity-mismatch",
+      "message": "arity mismatch for 'instance': expected 2, got 1",
+      "file": "llama_nocturnal.kif",
+      "line": 28,
+      "col": 1,
+      "end_line": 36,
+      "end_col": 2
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'during' argument #2: expected 'TimeInterval'",
+      "file": "llama_nocturnal.kif",
+      "line": 7,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 2
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'during' argument #2: expected 'TimeInterval'",
+      "file": "llama_nocturnal.kif",
+      "line": 7,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 2
+    }
+  ]
+}

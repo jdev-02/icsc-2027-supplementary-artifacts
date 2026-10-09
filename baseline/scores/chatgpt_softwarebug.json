@@ -1,0 +1,8 @@
+{
+  "file": "chatgpt_softwarebug.kif",
+  "ingest_errors": [
+    "[parse/kif/operator-arity-mismatch] operator 'and' expects at least 2 argument(s) but got 1",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses"
+  ],
+  "candidate_validation_issues": []
+}

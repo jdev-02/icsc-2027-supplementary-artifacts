@@ -1,0 +1,17 @@
+{
+  "file": "gemini_fork.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'instance' argument #2: expected 'Class'",
+      "file": "gemini_fork.kif",
+      "line": 8,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 34
+    }
+  ]
+}

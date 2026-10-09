@@ -1,0 +1,94 @@
+{
+  "file": "llama_softwarebug.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'associatedWith' must have a valid derivation to Entity",
+      "file": "llama_softwarebug.kif",
+      "line": 7,
+      "col": 1,
+      "end_line": 11,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'associatedWith' is not a declared relation",
+      "file": "llama_softwarebug.kif",
+      "line": 7,
+      "col": 1,
+      "end_line": 11,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'associatedWith' must have a valid derivation to Entity",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'associatedWith' is not a declared relation",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'incorrectResult' must have a valid derivation to Entity",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'incorrectResult' is not a declared relation",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'unexpectedResult' must have a valid derivation to Entity",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'unexpectedResult' is not a declared relation",
+      "file": "llama_softwarebug.kif",
+      "line": 13,
+      "col": 1,
+      "end_line": 19,
+      "end_col": 49
+    }
+  ]
+}

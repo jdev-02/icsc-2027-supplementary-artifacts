@@ -1,0 +1,8 @@
+{
+  "name": "icsc-2027-baseline-scorer",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "sigmakee": "2.1.3"
+  }
+}

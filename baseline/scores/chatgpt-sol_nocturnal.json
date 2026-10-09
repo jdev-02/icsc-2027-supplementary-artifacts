@@ -1,0 +1,28 @@
+{
+  "file": "chatgpt-sol_nocturnal.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "chatgpt-sol_nocturnal.kif",
+      "line": 18,
+      "col": 1,
+      "end_line": 28,
+      "end_col": 31
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "chatgpt-sol_nocturnal.kif",
+      "line": 8,
+      "col": 1,
+      "end_line": 16,
+      "end_col": 31
+    }
+  ]
+}

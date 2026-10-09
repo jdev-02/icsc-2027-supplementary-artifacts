@@ -1,0 +1,16 @@
+(subclass Fork Tool)
+
+(documentation Fork EnglishLanguage
+ "A tool consisting of a handle and two or more prongs, used especially for taking up food, pitching material, or digging.")
+
+(termFormat EnglishLanguage Fork "fork")
+
+(=> 
+  (instance ?F Fork)
+  (exists (?P1 ?P2)
+    (and
+      (instance ?P1 Prong)
+      (instance ?P2 Prong)
+      (part ?P1 ?F)
+      (part ?P2 ?F)
+      (not (= ?P1 ?P2)))))

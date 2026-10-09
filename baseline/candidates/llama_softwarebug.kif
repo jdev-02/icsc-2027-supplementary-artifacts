@@ -1,0 +1,19 @@
+(subclass SoftwareBug ProblemSituation)
+
+(documentation SoftwareBug EnglishLanguage "An error, flaw, failure, or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways.")
+
+(termFormat EnglishLanguage SoftwareBug "Software Bug")
+
+(forall (?bug)
+  (=> (instance ?bug SoftwareBug)
+      (exists (?program)
+        (and (instance ?program ComputerProgram)
+             (associatedWith ?bug ?program)))))
+
+(forall (?bug ?program ?result)
+  (=> (and (instance ?bug SoftwareBug)
+           (instance ?program ComputerProgram)
+           (associatedWith ?bug ?program)
+           (causes ?bug ?result))
+      (or (incorrectResult ?result ?program)
+          (unexpectedResult ?result ?program))))

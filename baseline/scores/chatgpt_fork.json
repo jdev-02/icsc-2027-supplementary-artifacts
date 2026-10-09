@@ -1,0 +1,7 @@
+{
+  "file": "chatgpt_fork.kif",
+  "ingest_errors": [
+    "[parse/kif/unexpected-char] unexpected character '='"
+  ],
+  "candidate_validation_issues": []
+}

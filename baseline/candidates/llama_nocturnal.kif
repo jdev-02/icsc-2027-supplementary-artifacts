@@ -1,0 +1,36 @@
+(subclass Nocturnal Attribute)
+
+(documentation Nocturnal EnglishLanguage "Of, relating to, or occurring in the night; active mainly during the night.")
+
+(termFormat EnglishLanguage Nocturnal "nocturnal")
+
+(=>
+    (instance ?ENTITY Nocturnal)
+    (forall (?TIME ?ACTIVITY)
+        (=>
+            (and
+                (instance ?ACTIVITY Doing)
+                (agent ?ACTIVITY ?ENTITY)
+                (instance ?TIME TimeInterval)
+                (during ?TIME Night)
+            )
+            (exists (?OTHERTIME)
+                (and
+                    (instance ?OTHERTIME TimeInterval)
+                    (not (during ?OTHERTIME Night))
+                    (greaterThan (measure ?TIME (CardinalityFn TimeInterval)) (measure ?OTHERTIME (CardinalityFn TimeInterval)))
+                )
+            )
+        )
+    )
+)
+
+(=>
+    (attribute ?ENTITY Nocturnal)
+    (exists (?TIME)
+        (and
+            (instance ?TIME Night)
+            (hasPurpose ?ENTITY (exists (?ACTIVITY) (and (instance ?ACTIVITYDoing) (agent ?ACTIVITY ?ENTITY) (during ?ACTIVITY ?TIME))))
+        )
+    )
+)

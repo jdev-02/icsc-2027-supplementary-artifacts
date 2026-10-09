@@ -1,0 +1,12 @@
+(subclass Nocturnal Attribute)
+
+(documentation Nocturnal EnglishLanguage
+   "A property of entities that are active or occur primarily during the night. This includes animals, events, or other phenomena that are characterized by nighttime activity.")
+
+(termFormat EnglishLanguage Nocturnal "nocturnal")
+
+(=> (attribute ?x Nocturnal)
+    (exists ?t (and (instance ?t NightTime)
+                     (active ?x ?t))))
+
+

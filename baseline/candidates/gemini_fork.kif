@@ -1,0 +1,19 @@
+(subclass Fork Tool)
+
+(documentation Fork EnglishLanguage "An implement with two or more prongs used
+especially for taking up food, pitching, or digging.")
+
+(termFormat EnglishLanguage Fork "fork")
+
+(=>
+  (instance ?F Fork)
+  (hasPurpose ?F
+    (exists (?ACT ?OBJ)
+      (and
+        (or
+          (instance ?ACT Ingesting)
+          (instance ?ACT Translocation)
+          (instance ?ACT Holding))
+        (instrument ?ACT ?F)
+        (patient ?ACT ?OBJ)
+        (instance ?OBJ Solid)))))

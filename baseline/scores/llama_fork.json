@@ -1,0 +1,13 @@
+{
+  "file": "llama_fork.kif",
+  "ingest_errors": [
+    "[parse/kif/unexpected-char] unexpected character '='",
+    "[parse/kif/unexpected-char] unexpected character '>'",
+    "[parse/kif/first-term] the first term of a sentence must be an operator, symbol, or non-row variable",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses"
+  ],
+  "candidate_validation_issues": []
+}

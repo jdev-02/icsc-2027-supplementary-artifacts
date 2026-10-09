@@ -1,0 +1,32 @@
+(subclass Fork Artifact)
+
+(documentation Fork EnglishLanguage "An implement with two or more prongs used especially for taking up food, pitching, or digging.")
+
+(termFormat EnglishLanguage Fork "fork")
+
+(=>
+    (instance ?FORK Fork)
+    (exists (?PRONG1 ?PRONG2)
+        (and
+            (part ?PRONG1 ?FORK)
+            (part ?PRONG2 ?FORK)
+            (not (= ?PRONG1 ?PRONG2))
+            (>= (CardinalityFn (KappaFn ?PRONG (part ?PRONG ?FORK))) 2)
+        )
+    )
+)
+
+(=>
+    (instance ?FORK Fork)
+    (exists (?PROCESS)
+        (and
+            (instance ?PROCESS UsingDevice)
+            (patient ?PROCESS ?FORK)
+            (or
+                (exists (?EATING) (and (instance ?EATING Eating) (instrument ?EATING ?FORK)))
+                (exists (?PITCHING) (and (instance ?PITCHING Pitching) (instrument ?PITCHING ?FORK)))
+                (exists (?DIGGING) (and (instance ?DIGGING Digging) (instrument ?DIGGING ?FORK)))
+            )
+        )
+    )
+)

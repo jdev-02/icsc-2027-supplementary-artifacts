@@ -1,0 +1,75 @@
+Workflow-authored SoftwareBug, criterion 3 reference run
+sigmakee.dev, Ask/Tell, backend SUPr (sigma-rs native prover), development/Cyber.kif loaded
+Run 2026-10-09. Copied from the sigmakee.dev result pane. Source labels are shown in
+brackets; the pane labels Tell assertions as __inline(8)__:<line>.
+
+Tell:
+(instance Bug1 SoftwareBug)
+(instance Prog1 ComputerProgram)
+(instance Alice Human)
+(instance Acme Organization)
+(bugDiscoverer Bug1 Prog1 Alice)
+(bugInProgram Bug1 Prog1 Acme)
+
+Ask:
+(exists (?D) (and (instance ?D Discovering) (agent ?D Alice) (patient ?D Bug1)))
+
+Result: Proved via SUPr, 1 given-clause step, 3.3s
+
+Plain Proof
+1. conjecture
+(exists (?A)
+  (and
+    (instance ?A Discovering)
+    (agent ?A Alice)
+    (patient ?A Bug1)))
+2. negated_conjecture (from step 1)
+(not
+  (exists (?A)
+    (and
+      (instance ?A Discovering)
+      (agent ?A Alice)
+      (patient ?A Bug1))))
+3. cnf_transformation (from step 2)
+(or
+  (not
+    (agent ?V0 Alice))
+  (not
+    (instance ?V0 Discovering))
+  (not
+    (patient ?V0 Bug1)))
+4. axiom  [development/Cyber.kif:155]
+(=>
+  (and
+    (instance ?BUG SoftwareBug)
+    (instance ?PROG ComputerProgram)
+    (bugDiscoverer ?BUG ?PROG ?DISCOVERER)
+    (bugInProgram ?BUG ?PROG ?AGENT))
+  (exists (?DISCOVER)
+    (and
+      (instance ?DISCOVER Discovering)
+      (agent ?DISCOVER ?DISCOVERER)
+      (patient ?DISCOVER ?BUG)
+      (holdsDuring
+        (BeginFn
+          (WhenFn ?DISCOVER))
+        (bugInProgram ?BUG ?PROG ?AGENT)))))
+5. hypothesis  [Tell, line 5]
+(bugDiscoverer Bug1 Prog1 Alice)
+6. hypothesis  [Tell, line 6]
+(bugInProgram Bug1 Prog1 Acme)
+7. axiom  [Tell, line 2]
+(instance Prog1 ComputerProgram)
+8. axiom  [Tell, line 1]
+(instance Bug1 SoftwareBug)
+9. hyper (from steps 4, 5, 6, 7, 8)
+(agent
+  (sk0 Acme Alice Bug1 Prog1) Alice)
+10. hyper (from steps 4, 5, 6, 7, 8)
+(instance
+  (sk0 Acme Alice Bug1 Prog1) Discovering)
+11. hyper (from steps 4, 5, 6, 7, 8)
+(patient
+  (sk0 Acme Alice Bug1 Prog1) Bug1)
+12. resolve (from steps 3, 9, 10, 11)
+FALSE

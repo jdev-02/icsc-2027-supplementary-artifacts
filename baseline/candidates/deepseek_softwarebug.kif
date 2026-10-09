@@ -1,0 +1,34 @@
+(subclass SoftwareBug InformationRepresentation)
+
+(documentation SoftwareBug EnglishLanguage
+  "A SoftwareBug is a defect in a ComputerProgram or in the software
+   of a computer system, i.e., a faulty portion of the program's code,
+   data, or design. When the program is executed under circumstances
+   that trigger the defect, the bug causes the program to produce an
+   incorrect or unexpected result, or to behave in ways other than
+   those intended by the program's specification or by its users.
+   A software bug may exist in a program from its creation or be
+   introduced later by modification; it typically remains latent until
+   the program is executed with triggering inputs, and it can be
+   eliminated by modifying or fixing the program. A single program may
+   contain several software bugs.")
+
+(termFormat EnglishLanguage SoftwareBug "software bug")
+
+(forall (?BUG)
+  (=> (instance ?BUG SoftwareBug)
+      (exists (?PROG)
+        (and (instance ?PROG ComputerProgram)
+             (part ?BUG ?PROG)
+             (not (equal ?BUG ?PROG))))))
+
+(forall (?BUG ?PROG ?PROC)
+  (=> (and (instance ?BUG SoftwareBug)
+           (instance ?PROG ComputerProgram)
+           (part ?BUG ?PROG)
+           (instance ?PROC ComputerProcess)
+           (realization ?PROC ?PROG)
+           (causes ?BUG ?PROC))
+      (exists (?PURPOSE)
+        (and (hasPurpose ?PROG ?PURPOSE)
+             (not (realization ?PROC ?PURPOSE))))))

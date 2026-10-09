@@ -1,0 +1,94 @@
+{
+  "file": "mistral_softwarebug.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'axiom' must have a valid derivation to Entity",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'axiom' is not a declared relation",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'exhibits' must have a valid derivation to Entity",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'exhibits' is not a declared relation",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'intended' must have a valid derivation to Entity",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'intended' is not a declared relation",
+      "file": "mistral_softwarebug.kif",
+      "line": 16,
+      "col": 1,
+      "end_line": 26,
+      "end_col": 48
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'axiom' must have a valid derivation to Entity",
+      "file": "mistral_softwarebug.kif",
+      "line": 8,
+      "col": 1,
+      "end_line": 14,
+      "end_col": 46
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'axiom' is not a declared relation",
+      "file": "mistral_softwarebug.kif",
+      "line": 8,
+      "col": 1,
+      "end_line": 14,
+      "end_col": 46
+    }
+  ]
+}

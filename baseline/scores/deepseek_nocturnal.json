@@ -1,0 +1,39 @@
+{
+  "file": "deepseek_nocturnal.kif",
+  "ingest_errors": [],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "deepseek_nocturnal.kif",
+      "line": 7,
+      "col": 1,
+      "end_line": 16,
+      "end_col": 29
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "deepseek_nocturnal.kif",
+      "line": 18,
+      "col": 1,
+      "end_line": 23,
+      "end_col": 35
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "domain-mismatch",
+      "message": "domain mismatch for 'attribute' argument #2: expected 'Attribute'",
+      "file": "deepseek_nocturnal.kif",
+      "line": 18,
+      "col": 1,
+      "end_line": 23,
+      "end_col": 35
+    }
+  ]
+}

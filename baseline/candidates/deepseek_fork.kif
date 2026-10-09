@@ -1,0 +1,38 @@
+(subclass Fork Device)
+
+(documentation Fork EnglishLanguage "An implement with two or more
+pointed prongs attached to a handle, used especially for taking up food,
+for pitching material such as hay or straw, and for digging. A Fork is a
+Device, i.e. an artifact whose purpose is to serve as an instrument in
+some process. Every Fork has at least two distinct Prongs as physical
+parts, and typical forks function as instruments in the processes of
+Eating, Digging, or Throwing (e.g. pitching hay).")
+
+(termFormat EnglishLanguage Fork "fork")
+
+(subclass Prong Object)
+
+(documentation Prong EnglishLanguage "A pointed, projecting part of an
+implement, such as one of the tines of a Fork. A Prong is a physical
+Object that is part of an implement and serves to pierce, lift, or hold
+material.")
+
+(=>
+  (instance ?F Fork)
+  (exists (?P1 ?P2)
+    (and
+      (instance ?P1 Prong)
+      (instance ?P2 Prong)
+      (not (equal ?P1 ?P2))
+      (part ?P1 ?F)
+      (part ?P2 ?F))))
+
+(=>
+  (instance ?F Fork)
+  (or
+    (exists (?E)
+      (and (instance ?E Eating) (instrument ?E ?F)))
+    (exists (?D)
+      (and (instance ?D Digging) (instrument ?D ?F)))
+    (exists (?T)
+      (and (instance ?T Throwing) (instrument ?T ?F)))))

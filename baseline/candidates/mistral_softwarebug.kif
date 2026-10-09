@@ -1,0 +1,28 @@
+(subclass SoftwareBug Error)
+
+(documentation SoftwareBug EnglishLanguage
+   "An error, flaw, failure, or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways.")
+
+(termFormat EnglishLanguage SoftwareBug "software bug")
+
+(axiom SoftwareBugLocated
+   (forall (?bug)
+      (=> (instance ?bug SoftwareBug)
+          (exists (?software)
+             (and
+                (instance ?software Software)
+                (located ?bug ?software))))))
+
+(axiom SoftwareBugCausesUnintendedBehavior
+   (forall (?bug)
+      (=> (instance ?bug SoftwareBug)
+          (exists (?software ?behavior)
+             (and
+                (instance ?software Software)
+                (located ?bug ?software)
+                (instance ?behavior Process)
+                (causes ?bug ?behavior)
+                (exhibits ?software ?behavior)
+                (not (intended ?behavior)))))))
+
+

@@ -1,0 +1,22 @@
+(subclass SoftwareBug ComputerProgram)
+
+(documentation SoftwareBug EnglishLanguage
+"An error, flaw, failure, or fault in a computer program or system that causes the program or system to produce an incorrect or unexpected result, or to behave in an unintended way.")
+
+(termFormat EnglishLanguage SoftwareBug "software bug")
+
+(=>
+(instance ?BUG SoftwareBug)
+(and
+(exists (?SYSTEM)
+(and
+(instance ?SYSTEM ComputerProcess)
+(causes ?BUG
+(and
+(or
+(hasResult ?SYSTEM ?RESULT)
+(behavesInWay ?SYSTEM ?WAY))
+(or
+(not (expectedResult ?RESULT))
+(not (intendedBehavior ?WAY))))))))
+)

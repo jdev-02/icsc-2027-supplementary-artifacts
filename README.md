@@ -4,7 +4,7 @@ Supplementary material for a submission on LLM-assisted SUMO ontology engineerin
 human-gated agency. This repository holds the four things the paper's Conclusion
 promises: the system prompt, the external validation checklist, the constraint
 architecture diagram, and the proof transcripts behind the paper's proof-complexity
-table.
+table. It also holds the materials behind the paper's no-protocol baseline.
 
 ## Contents
 
@@ -24,6 +24,10 @@ table.
   below). Vampire's internal file-provenance annotations (temp session-file paths from
   the machine the proofs were run on) have been removed; they're not needed to read the
   proof.
+- **`baseline/`**: the no-protocol baseline behind the paper's Table II: the scoring
+  criteria and the prompt each model received, the SUO-KIF each model produced, the
+  scorer and its output, and the criterion 3 proof runs, including a higher-order-logic
+  check of the two proofs that involve `holdsDuring`. Start with `baseline/README.md`.
 
 ## Proof complexity patterns
 

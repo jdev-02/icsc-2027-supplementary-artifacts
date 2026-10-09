@@ -1,0 +1,32 @@
+(subclass Fork Utensil)
+
+(documentation Fork EnglishLanguage
+   "An implement with two or more prongs, typically used for taking up food, pitching, or digging. It is a handheld tool designed to pierce, hold, or manipulate objects, particularly in culinary or agricultural contexts.")
+
+(termFormat EnglishLanguage Fork "Fork")
+
+(=> (instance ?F Fork)
+    (exists ?P1 ?P2
+        (and
+            (instance ?P1 Prong)
+            (instance ?P2 Prong)
+            (part ?P1 ?F)
+            (part ?P2 ?F)
+            (not (equal ?P1 ?P2)))))
+
+(=> (instance ?F Fork)
+    (or
+        (capability ?F (fn ?OBJ (TakingUpFood ?OBJ)))
+        (capability ?F (fn ?OBJ (Pitching ?OBJ)))
+        (capability ?F (fn ?OBJ (Digging ?OBJ)))))
+
+(subclass Prong Object)
+
+(subclass TakingUpFood Process)
+
+(subclass Pitching Process)
+
+(subclass Digging Process)
+
+(fn ?OBJ (TakingUpFood ?OBJ))
+

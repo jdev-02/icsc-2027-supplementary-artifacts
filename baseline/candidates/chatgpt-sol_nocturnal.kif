@@ -1,0 +1,28 @@
+(subclass Nocturnal Attribute)
+
+(documentation Nocturnal EnglishLanguage
+  "An attribute of an entity that occurs in, is associated with, or is characteristically active during the night. When applied to an Organism, Nocturnal indicates that the Organism is active mainly during nighttime.")
+
+(termFormat EnglishLanguage Nocturnal "nocturnal")
+
+(=>
+  (and
+    (attribute ?PROCESS Nocturnal)
+    (instance ?PROCESS Process))
+  (exists (?TIME ?NIGHT)
+    (and
+      (time ?PROCESS ?TIME)
+      (instance ?NIGHT NightTime)
+      (during ?TIME ?NIGHT))))
+
+(=>
+  (and
+    (attribute ?ORGANISM Nocturnal)
+    (instance ?ORGANISM Organism))
+  (exists (?ACTIVITY ?TIME ?NIGHT)
+    (and
+      (instance ?ACTIVITY Process)
+      (agent ?ACTIVITY ?ORGANISM)
+      (time ?ACTIVITY ?TIME)
+      (instance ?NIGHT NightTime)
+      (during ?TIME ?NIGHT))))

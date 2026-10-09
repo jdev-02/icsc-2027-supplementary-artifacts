@@ -1,0 +1,185 @@
+{
+  "file": "mistral_fork.kif",
+  "ingest_errors": [
+    "[parse/kif/quantifier-arg] quantifier operators' first argument must be a sentence comprised only of variables",
+    "[parse/kif/unbalanced-parens] unbalanced parentheses"
+  ],
+  "candidate_validation_issues": [
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "free-var-in-consequent",
+      "message": "variable 'OBJ' in consequent is not bound by antecedent or quantifier",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "arity-mismatch",
+      "message": "arity mismatch for 'capability': expected 3, got 2",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'fn' must have a valid derivation to Entity",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'fn' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'TakingUpFood' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "arity-mismatch",
+      "message": "arity mismatch for 'capability': expected 3, got 2",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'fn' must have a valid derivation to Entity",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'fn' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'Pitching' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "arity-mismatch",
+      "message": "arity mismatch for 'capability': expected 3, got 2",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'fn' must have a valid derivation to Entity",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'fn' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'Digging' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 17,
+      "col": 1,
+      "end_line": 21,
+      "end_col": 51
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "no-entity-ancestor",
+      "message": "symbol 'fn' must have a valid derivation to Entity",
+      "file": "mistral_fork.kif",
+      "line": 31,
+      "col": 1,
+      "end_line": 31,
+      "end_col": 30
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'fn' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 31,
+      "col": 1,
+      "end_line": 31,
+      "end_col": 30
+    },
+    {
+      "severity": "warning",
+      "kind": "semantic",
+      "code": "head-not-relation",
+      "message": "sentence head 'TakingUpFood' is not a declared relation",
+      "file": "mistral_fork.kif",
+      "line": 31,
+      "col": 1,
+      "end_line": 31,
+      "end_col": 30
+    }
+  ]
+}

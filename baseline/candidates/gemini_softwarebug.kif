@@ -1,0 +1,24 @@
+(subclass SoftwareBug Defect)
+
+(documentation SoftwareBug EnglishLanguage "An error, flaw, or &%Defect in a
+&%ComputerProgram or &%ComputerSystem that causes it to produce an incorrect or
+unexpected result, or to behave in unintended ways.")
+
+(termFormat EnglishLanguage SoftwareBug "software bug")
+
+(=>
+  (instance ?BUG SoftwareBug)
+  (exists (?SYS)
+    (and
+      (or
+        (instance ?SYS ComputerProgram)
+        (instance ?SYS ComputerSystem))
+      (property ?SYS ?BUG))))
+
+(=>
+  (and
+    (instance ?BUG SoftwareBug)
+    (property ?OBJ ?BUG))
+  (or
+    (instance ?OBJ ComputerProgram)
+    (instance ?OBJ ComputerSystem)))
