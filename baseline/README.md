@@ -103,7 +103,7 @@ variable; the script is otherwise unchanged.
 | ChatGPT | `SoftwareBug` | Fail | Fail | | malformed `and`/`causes` nesting |
 | ChatGPT | `Nocturnal` | Pass | Fail | | `(subclass Nocturnal Attribute)` |
 | DeepSeek | `Fork` | Pass | Pass | Fail | |
-| DeepSeek | `SoftwareBug` | Pass | Pass | Fail | |
+| DeepSeek | `SoftwareBug` | Pass | Pass | Fail* | |
 | DeepSeek | `Nocturnal` | Pass | Fail | | `(subclass Nocturnal Attribute)` |
 | Gemini | `Fork` | Pass | Fail | | `Solid` used as a class |
 | Gemini | `SoftwareBug` | Pass | Pass | Pass* | |
@@ -134,16 +134,17 @@ candidate, the one rule that is the withheld answer was removed from the loaded 
 | Pair | Tell | Ask | Outcome |
 |---|---|---|---|
 | DeepSeek `Fork` | `(instance Fork1 Fork)` | `(exists (?X) (and (instance ?X Tine) (component ?X Fork1)))` | Not proved (step budget exhausted). DeepSeek's axioms use its own class `Prong` with no connection to SUMO's `Tine`, so the conjecture is not entailed. |
-| DeepSeek `SoftwareBug` | `(instance Bug1 SoftwareBug)` `(instance Prog1 ComputerProgram)` `(part Bug1 Prog1)` `(instance Proc1 ComputerProcess)` `(realization Proc1 Prog1)` `(causes Bug1 Proc1)` | `(exists (?PURPOSE) (and (hasPurpose Prog1 ?PURPOSE) (not (realization Proc1 ?PURPOSE))))` | Not proved (step budget exhausted). Confounded: the candidate's parent class `InformationRepresentation` is not defined in SUMO, and `ComputerProcess` is defined only in a file that was not loaded. |
+| DeepSeek `SoftwareBug`* | `(instance Bug1 SoftwareBug)` `(instance Prog1 ComputerProgram)` `(part Bug1 Prog1)` `(instance Proc1 ComputerProcess)` `(realization Proc1 Prog1)` `(causes Bug1 Proc1)` | `(exists (?PURPOSE) (and (hasPurpose Prog1 ?PURPOSE) (not (realization Proc1 ?PURPOSE))))` | Not proved (step budget exhausted). Confounded: the candidate's parent class `InformationRepresentation` is not defined in SUMO, and `ComputerProcess` is defined only in a file that was not loaded. |
 | Gemini `SoftwareBug`* | `(instance Bug1 SoftwareBug)` | `(exists (?SYS) (and (or (instance ?SYS ComputerProgram) (instance ?SYS ComputerSystem)) (property ?SYS Bug1)))` | Proved. |
 | Gemini `Nocturnal`* | `(instance Org1 Organism)` `(attribute Org1 Nocturnal)` | `(exists (?TIME ?NIGHT) (and (instance ?NIGHT Nighttime) (during ?TIME ?NIGHT) (holdsDuring ?TIME (property Org1 Awake))))` | Proved, through SUMO's `(subrelation attribute property)`. `Nighttime` is Gemini's own spelling; SUMO's term is `NightTime`. |
 
-The protocol calls for the conjecture already used for the workflow-authored term. Both
-Gemini conjectures were adapted because the originals are not fair to a cold baseline:
-`SoftwareBug`'s original uses `bugInProgram`, a relation the workflow itself created, and
+The protocol calls for the conjecture already used for the workflow-authored term. Three
+of the four conjectures, all but DeepSeek `Fork`, were adapted because the originals are
+not fair to a cold baseline: `SoftwareBug`'s original uses `bugInProgram`, a relation the
+workflow itself created, and
 `Nocturnal`'s rests on the human-health rule removed above, which its own source comment
 marks as a simplification. The adapted conjecture Tells the antecedent of the candidate's
-own top-level rule and Asks its consequent, which makes both a weaker test than `Fork`'s.
+own top-level rule and Asks its consequent, which makes each a weaker test than `Fork`'s.
 For both Gemini proofs the negated conjecture was also asked against the same Tell facts,
 and it did not prove, so neither result comes from an inconsistent knowledge base.
 
